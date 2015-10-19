@@ -65,14 +65,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layour_marginBottom="37dp"
-        android:textSize="40sp"
+        android:layout_marginBottom="37dp"
+        android:textSize="40dp"
         android:textColor="#ffffff"
         android:text="00:00:000"/>
-        />
 
 
-    />
+
 
 
 

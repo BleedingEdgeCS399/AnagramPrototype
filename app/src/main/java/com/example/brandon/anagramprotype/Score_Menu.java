@@ -8,6 +8,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
+import android.R.*;
 
 public class Score_Menu extends AppCompatActivity {
 
@@ -24,7 +26,7 @@ public class Score_Menu extends AppCompatActivity {
         Button game_btn = (Button) findViewById(R.id.button3);
         score=getIntent().getExtras().getInt("CorrectAnswers");
         puzzles=getIntent().getExtras().getInt("TotalPuzzles:");
-        Textview t= (Textview) findViewById(R.id.final_score);
+        TextView t= (TextView) findViewById(R.id.final_score);
         final_Score=" "+score+""+puzzles+"";
         t.setText(final_Score);
 

@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.logging.Handler;
 
@@ -48,7 +49,7 @@ public class Game extends AppCompatActivity {
 
 
         Button title_return = (Button) findViewById(R.id.MainActReturn);
-        Button score_btn = (Button) findViewById(R.id.Score_Btn);
+        final Button score_btn = (Button) findViewById(R.id.Score_Btn);
 
         final Intent intentScore= new Intent(Game.this,Score_Menu.class);
         final EditText answer= (EditText) findViewByID(R.id.answer);
@@ -56,11 +57,11 @@ public class Game extends AppCompatActivity {
 
             public void onClick(View v) {
 
-                 Answer=answer.getText().toString();
+                Answer = answer.getText().toString();
 
-                if(EasyArray.length>=puzzles) {
+                if (EasyArray.length >= puzzles) {
 
-                    if (Answer.equals(EasyArray[puzzles]) {
+                    if (Answer.equals(EasyArray[puzzles])) {
 
                         score++;
 
@@ -68,39 +69,40 @@ public class Game extends AppCompatActivity {
 
                     puzzles++;
                 }
-                if(MediumArray.length>=puzzles){
+                if (MediumArray.length >= puzzles) {
 
-                    if(Answer.equals(MediumArray[puzzles]){
+                    if (Answer.equals(MediumArray[puzzles])) {
 
                         score++;
 
-                }
+                    }
                     puzzles++;
-                if(HardArray.length>=puzzles) {
+                    if (HardArray.length >= puzzles) {
 
-                    if(Answer.equals(HardArray[puzzles]){
+                        if (Answer.equals(HardArray[puzzles])) {
 
 
-                        score++;
-                }
-                    intentScore.putExtra("CorrectAnswers", score);
-                    intentScore.putExtra("Totalpuzzles",puzzles);
-                    startActivity(intentScore);
-        });
+                            score++;
+                        }
+                        intentScore.putExtra("CorrectAnswers", score);
+                        intentScore.putExtra("Totalpuzzles", puzzles);
+                        startActivity(intentScore);
+                    }
+                    ;
                     score_btn.setOnClickListener(new View.OnClickListener() {
 
                         public void onClick(View v) {
 
-                            intentScore.putExtra("CorrectAnswers",score);
-                            intentScore.putExtra("Totalpuzzles",puzzles);
+                            intentScore.putExtra("CorrectAnswers", score);
+                            intentScore.putExtra("Totalpuzzles", puzzles);
                             startActivity(intentScore);
 
-            }
+                        }
 
-        });
+                    });
 
 
-                    private Runnable updateTimerThread = new Runnable() {
+                    Runnable updateTimerThread = new Runnable() {
 
                         public void run() {
                             timeInMilliseconds = SystemClock.uptimeMillis() - startTime;
@@ -125,7 +127,8 @@ public class Game extends AppCompatActivity {
                     };
 
 
+                }
 
-    }
+
 
 }
