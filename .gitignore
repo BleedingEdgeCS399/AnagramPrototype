@@ -47,3 +47,4 @@ Temporary Items
 .idea
 *.iml
 /build
+/local.properties
