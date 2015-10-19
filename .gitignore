@@ -44,3 +44,4 @@ Temporary Items
 
 # Repository Specific Files
 .gradle
+.idea
